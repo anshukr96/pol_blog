@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+ {{ post.title }} - {{ block.super}}          #block super will allow to access the parent template too
+{% endblock %}
+{% block content %}
+   <h1 class="text-danger text-center ">POST</h1>   
+   {% for post in posts %}
+      <br> <a href="{% url 'show_topics' pk=post.pk %}">{{ post.title}}</a> <br>
+   {% endfor %}   
+ {% endblock %}
