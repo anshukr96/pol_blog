@@ -1,5 +1,5 @@
 {% extends 'base_accounts.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %}Sign up to BolIndia {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
           <h3 class="card-title">Sign up</h3>
           <form method="post" novalidate>
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy}}
             <button type="submit" class="btn btn-primary btn-block">Create an account</button>
           </form>
         </div>
