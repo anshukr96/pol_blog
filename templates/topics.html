@@ -5,4 +5,14 @@
  {% block content %}
      <h1 class="text-center text-primary"><a href="{% url 'show_topics' pk=topic.pk %}">{{ topic.title }}</a></h1>
      <br><p class="text-center text-primary">{{ topic.description }}</p>
+
+     <!-- FACEBOOK COMMENTS HERE     -->
+    <!-- replace the data-href with the production url at the time of making the project live -->
+    <div class="fb-comments" 
+    data-href="http://localhost:8000/post/{{topics.id}}"
+    data-width="100%" 
+    data-numposts="5"
+>
+</div>
+<!-- ------------------------------ -->
 {% endblock %}
